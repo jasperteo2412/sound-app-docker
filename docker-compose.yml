@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: audio-backend
+    ports:
+      - "4000:4000"
+    environment:
+      - SESSION_SECRET=supersecret
+      - NODE_ENV=production
+    volumes:
+      - ./backend/uploads:/app/uploads # persist uploaded files
+      - ./backend/data:/app/data # persist sqlite db
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: audio-frontend
+    ports:
+      - "4173:80"
+    environment:
+     - BASE_URL=http://localhost:4000
+    depends_on:
+      - backend
+    restart: always
