@@ -1,7 +1,7 @@
 # sound-app-docker
 
-## Execution of scripts
-The workflow for executing the scripts is listed in this section that were used in the project. The scripts are written using MacOS and requires Git Bash or WSL to run on windows natively.
+## Execution of Docker scripts
+The workflow for executing the Docker scripts is listed in this section. The scripts are written using MacOS and requires Git Bash or WSL to run on windows natively.
 
 Using the terminal, navigate to the project root folder.
 1.	Use command “./build.sh” to build both frontend & backend images
